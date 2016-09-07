@@ -6,8 +6,14 @@ void setup()
 }
 void draw()
 {
-	bob = new Die(50, 50);
-	bob.show();
+	for(int j = 0; j < 8; j++)
+	{
+		for(int i = 0; i < 8; i++)
+		{
+			bob = new Die(i*50, j*50);
+			bob.show();
+		}
+	}
 }
 void mousePressed()
 {
@@ -85,6 +91,12 @@ class Die
 		}
 		if (dieSpots == 6)
 		{
+			ellipse(dieX+15,dieY+15,10,10);
+			ellipse(dieX+35,dieY+15,10,10);
+			ellipse(dieX+15,dieY+35,10,10);
+			ellipse(dieX+35,dieY+35,10,10);
+			ellipse(dieX+15,dieY+25,10,10);
+			ellipse(dieX+35,dieY+25,10,10);
 		}
 	}
 }
