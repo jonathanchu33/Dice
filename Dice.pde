@@ -1,4 +1,5 @@
 Die bob;
+int sumDies = 0;
 void setup()
 {
 	size(400, 400);
@@ -14,9 +15,13 @@ void draw()
 			bob.show();
 		}
 	}
+	fill((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256),150);
+	textSize(150);
+	text(sumDies,75,250);
 }
 void mousePressed()
 {
+	sumDies = 0;
 	redraw();
 }
 class Die
@@ -58,45 +63,58 @@ class Die
 	}
 	void show()
 	{
+		fill(255);
 		rect(dieX,dieY,50,50);
 		if (dieSpots == 1)
 		{
+			fill(0);
 			ellipse(dieX+25,dieY+25,10,10);
+			sumDies = sumDies++;
 		}
 		if (dieSpots == 2)
 		{
-			ellipse(dieX+15,dieY+15,10,10);
-			ellipse(dieX+35,dieY+35,10,10);
+			fill(0,0,255);
+			ellipse(dieX+10,dieY+10,10,10);
+			ellipse(dieX+40,dieY+40,10,10);
+			sumDies = sumDies += 2;
 		}
 		if (dieSpots == 3)
 		{
+			fill(255,0,0);
 			ellipse(dieX+25,dieY+25,10,10);
-			ellipse(dieX+35,dieY+15,10,10);
-			ellipse(dieX+15,dieY+35,10,10);
+			ellipse(dieX+40,dieY+10,10,10);
+			ellipse(dieX+10,dieY+40,10,10);
+			sumDies = sumDies += 3;
 		}
 		if (dieSpots == 4)
 		{
-			ellipse(dieX+15,dieY+15,10,10);
-			ellipse(dieX+35,dieY+15,10,10);
-			ellipse(dieX+15,dieY+35,10,10);
-			ellipse(dieX+35,dieY+35,10,10);
+			fill(255,0,255);
+			ellipse(dieX+10,dieY+10,10,10);
+			ellipse(dieX+40,dieY+10,10,10);
+			ellipse(dieX+10,dieY+40,10,10);
+			ellipse(dieX+40,dieY+40,10,10);
+			sumDies = sumDies += 4;
 		}
 		if (dieSpots == 5)
 		{
+			fill(255,255,0);
 			ellipse(dieX+25,dieY+25,10,10);
-			ellipse(dieX+15,dieY+15,10,10);
-			ellipse(dieX+35,dieY+15,10,10);
-			ellipse(dieX+15,dieY+35,10,10);
-			ellipse(dieX+35,dieY+35,10,10);
+			ellipse(dieX+10,dieY+10,10,10);
+			ellipse(dieX+40,dieY+10,10,10);
+			ellipse(dieX+10,dieY+40,10,10);
+			ellipse(dieX+40,dieY+40,10,10);
+			sumDies = sumDies += 5;
 		}
 		if (dieSpots == 6)
 		{
-			ellipse(dieX+15,dieY+15,10,10);
-			ellipse(dieX+35,dieY+15,10,10);
-			ellipse(dieX+15,dieY+35,10,10);
-			ellipse(dieX+35,dieY+35,10,10);
-			ellipse(dieX+15,dieY+25,10,10);
-			ellipse(dieX+35,dieY+25,10,10);
+			fill(0,255,0);
+			ellipse(dieX+10,dieY+10,10,10);
+			ellipse(dieX+40,dieY+10,10,10);
+			ellipse(dieX+10,dieY+40,10,10);
+			ellipse(dieX+40,dieY+40,10,10);
+			ellipse(dieX+10,dieY+25,10,10);
+			ellipse(dieX+40,dieY+25,10,10);
+			sumDies = sumDies += 6;
 		}
 	}
 }
