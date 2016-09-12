@@ -16,7 +16,7 @@ void draw()
 			bob.show();
 		}
 	}
-	fill((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256),150);
+	fill((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256),200);
 	textSize(150);
 	text(sumDies,75,250);
 }
