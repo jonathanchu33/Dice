@@ -1,12 +1,13 @@
 Die bob;
 int sumDies = 0;
+int scramble = 0;
 void setup()
 {
-	size(400, 400);
-	noLoop();
+	size(400, 400);	
 }
 void draw()
 {
+	sumDies = 0;
 	for(int j = 0; j < 8; j++)
 	{
 		for(int i = 0; i < 8; i++)
@@ -21,8 +22,16 @@ void draw()
 }
 void mousePressed()
 {
-	sumDies = 0;
-	redraw();
+	if (scramble == 0)
+	{
+		scramble = 1;
+		noLoop();
+	}
+	else
+	{
+		scramble = 0;
+		loop();
+	}
 }
 class Die
 {
